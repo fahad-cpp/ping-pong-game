@@ -1,1 +1,8 @@
+.vs
 bin
+int
+*.filters
+*.user
+*.vcxproj
+*.sln
+*.slnx
