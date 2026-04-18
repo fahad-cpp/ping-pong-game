@@ -53,15 +53,15 @@ LRESULT CALLBACK window_callback(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPa
 }
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
 	//Create Window Class
-	WNDCLASS window_class = {};
+	WNDCLASSA window_class = {};
 	//style,classname,callback
 	window_class.style = CS_HREDRAW | CS_VREDRAW;
-	window_class.lpszClassName = L"Window Class Name";
+	window_class.lpszClassName = "Window Class Name";
 	window_class.lpfnWndProc = window_callback;
 	//Register Window Class
-	RegisterClass(&window_class);
+	RegisterClassA(&window_class);
 	//CreateWindow()
-	HWND window = CreateWindow(window_class.lpszClassName, L"Ping Pong!", WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720, 0, 0, hInstance, 0);
+	HWND window = CreateWindowA(window_class.lpszClassName, "Ping Pong!", WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720, 0, 0, hInstance, 0);
 	HDC hdc = GetDC(window);
 
 	Input input = {};
